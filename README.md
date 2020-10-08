@@ -24,7 +24,7 @@ I hope we can develop some of these features:
 
 **Example:**
 
-## Menu Display
+### Main Menu
 ```bash
 No | Name of Drink | Price
 ---+---------------+-----------
@@ -46,6 +46,11 @@ Menu:
 
 Please select a number from the menu:
 ```
+
+### Choose the drink you want
+### Search the drink you want
+### Sort by drink price
+### Sort by drink name
 
 # Required
 Before starting the contributing on this project, make sure you understand:
