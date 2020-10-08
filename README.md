@@ -13,6 +13,7 @@ This repository was created to develop simple programs with beginner programmers
 # Features
 I hope we can develop some of these features:
 - Search the drink you want.
+- Choose the drink you want.
 - Calculate the total purchase of drinks.
 - Sort by drink price.
    - Cheapest.
@@ -34,6 +35,12 @@ No | Name of Drink | Price
 7  | Calpico       | 6500
 8  | Ornamin C     | 10000
 ---+---------------+-----------
+
+Menu:
+1. Choose the drink you want
+2. Search the drink you want
+3. Sort by drink price
+4. Sort by drink name
 ```
 
 # Required
@@ -44,4 +51,4 @@ Before starting the contributing on this project, make sure you understand:
 4. Procedural Programming.
 4. Calculations.
 5. Functions and procedures.
-6. Read the contribution rules at **[CONTRIBUTING.md]()**
+6. Read the contribution rules at **[CONTRIBUTING.md](https://github.com/CycloneDevID/SimpleDrinksSalesProgram/blob/main/CONTRIBUTING.md)**
