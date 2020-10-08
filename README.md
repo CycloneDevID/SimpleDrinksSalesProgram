@@ -47,10 +47,50 @@ Menu:
 Please select a number from the menu:
 ```
 
-### Choose the drink you want
-### Search the drink you want
-### Sort by drink price
-### Sort by drink name
+### 1:Choose the drink you want
+```bash
+Menu: Choose the drink you want!
+
+No | Name of Drink | Price
+---+---------------+-----------
+1  | Coca-Cola     | 11000
+2  | Pepsi         | 9500
+3  | Fanta         | 12000
+4  | Sprite        | 10500
+5  | Dr Papper     | 15000
+6  | pocari sweat  | 7000
+7  | Calpico       | 6500
+8  | Ornamin C     | 10000
+---+---------------+-----------
+
+please select the drink number you want: 1
+what more drink you want? y/n
+y
+please select the drink number you want: 4
+what more drink you want? y/n
+n
+
+your drink:
+No | Name of Drink | Price
+---+---------------+-----------
+1  | Coca-Cola     | 11000
+2  | Pepsi         | 9500
+---+---------------+-----------
+
+amount paid :  20500
+enter the amount of money : 30000
+change money : 90500
+You've already bought Coca Cola and Pepsi, thank you!
+```
+### 2:Search the drink you want
+```bash
+```
+### 3:Sort by drink price
+```bash
+```
+### 4:Sort by drink name
+```bash
+```
 
 # Required
 Before starting the contributing on this project, make sure you understand:
