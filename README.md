@@ -21,6 +21,21 @@ I hope we can develop some of these features:
    - Ascending.
    - Descending.
 
+**Example:**
+```bash
+No | Name of Drink | Price
+---+---------------+-----------
+1  | Coca-Cola     | 11000
+2  | Pepsi         | 9500
+3  | Fanta         | 12000
+4  | Sprite        | 10500
+5  | Dr Papper     | 15000
+6  | pocari sweat  | 7000
+7  | Calpico       | 6500
+8  | Ornamin C     | 10000
+---+---------------+-----------
+```
+
 # Required
 Before starting the contributing on this project, make sure you understand:
 1. Algorithms.
