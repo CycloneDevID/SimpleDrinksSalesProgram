@@ -23,6 +23,8 @@ I hope we can develop some of these features:
    - Descending.
 
 **Example:**
+
+## Menu Display
 ```bash
 No | Name of Drink | Price
 ---+---------------+-----------
@@ -41,6 +43,8 @@ Menu:
 2. Search the drink you want
 3. Sort by drink price
 4. Sort by drink name
+
+Please select a number from the menu:
 ```
 
 # Required
