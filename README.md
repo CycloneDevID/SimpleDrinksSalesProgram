@@ -101,3 +101,6 @@ Before starting the contributing on this project, make sure you understand:
 4. Calculations.
 5. Functions and procedures.
 6. Read the contribution rules at **[CONTRIBUTING.md](https://github.com/CycloneDevID/SimpleDrinksSalesProgram/blob/main/CONTRIBUTING.md)**
+
+# Project Maintainers
+The project was founded by **[dikyindrah](https://github.com/dikyindrah)** and is actively managed by **[CycloneDevID](https://github.com/CycloneDevID)**. Active member in the CycloneDevID community
