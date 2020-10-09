@@ -1,6 +1,6 @@
 /*
  *  Java main file
- *  Containes driver class for Drink Class
+ *  Containes driver class for drink Class
  */
 
 
@@ -16,11 +16,11 @@ public class Driver {
     Scanner input = new Scanner(System.in);
     String fileName = "product_details.csv";
     
-    ArrayList<Drink> drinksList = loadDrinks(fileName);
+    ArrayList<drink> drinksList = loaddrinks(fileName);
     
-    System.out.println("********** WELCOME TO ANY DRINK ***********");
+    System.out.println("********** WELCOME TO ANY drink ***********");
     System.out.println();
-    displayDrinks(drinksList);
+    displaydrinks(drinksList);
     System.out.println();
     
     while (ulang.equals("y"))
@@ -37,16 +37,16 @@ public class Driver {
 
       switch (pilih)
       {
-        case 1: chooseDrinks(drinksList);
+        case 1: choosedrinks(drinksList);
                 break;
         
-        case 2: searchDrinks(drinksList);
+        case 2: searchdrinks(drinksList);
                 break;
         
-        case 3: sortDrinksByPrice(drinksList);
+        case 3: sortdrinksByPrice(drinksList);
                 break;
         
-        case 4: sortDrinksByName(drinksList);
+        case 4: sortdrinksByName(drinksList);
                 break;
         
         default:  System.out.println("Invalid Choice!");
@@ -64,15 +64,15 @@ public class Driver {
    *  loadProducts
    *  Loads drinks details from a file to list drinksList
    *  @param fileName - String containing the input file name
-   *  @return - An ArrayList of Drink objects
+   *  @return - An ArrayList of drink objects
    */
-  public static ArrayList<Drink> loadDrinks(String fileName) {
-    ArrayList<Drink> drinksList = new ArrayList<Drink>();
+  public static ArrayList<drink> loaddrinks(String fileName) {
+    ArrayList<drink> drinksList = new ArrayList<drink>();
     try {
       //  opening file
       Scanner inFile = new Scanner(new File(fileName));
       while (inFile.hasNext()) {
-        Drink dr = new Drink();
+        drink dr = new drink();
         List<String> words = Arrays.asList(inFile.nextLine().split(","));
         dr.setName(words.get(0));
         dr.setPrice(Integer.parseInt(words.get(1)));
@@ -87,60 +87,60 @@ public class Driver {
   }
 
   /*
-   *  displayDrinks
-   *  Given an ArrayList of Drink objects, outputs them
+   *  displaydrinks
+   *  Given an ArrayList of drink objects, outputs them
    *  to the console in the specified format.
    *  The format for this method is:
    *  NAME, INVENTORY_CODE, QUANTITY, PRICE, TYPE, RATING 
    *  @param products - ArrayList of Product objects
    */
-  public static void displayDrinks(ArrayList<Drink> drinksList) {
-    System.out.println("No | Name of Drink | Price");
+  public static void displaydrinks(ArrayList<drink> drinksList) {
+    System.out.println("No | Name of drink | Price");
     System.out.println("---+---------------+-----------");
     for (int i = 0; i < drinksList.size(); i++) {
-      Drink tmpDrink = drinksList.get(i);
+      drink tmpdrink = drinksList.get(i);
       //System.out.print((i+1) + "\t");
-      //System.out.print(tmpDrink.getName() + "\t");
-      //System.out.print(tmpDrink.getPrice());
+      //System.out.print(tmpdrink.getName() + "\t");
+      //System.out.print(tmpdrink.getPrice());
       //System.out.println();
-      System.out.println(String.format("%-3s| %-14s| %s" , (i+1), tmpDrink.getName(), tmpDrink.getPrice()));
+      System.out.println(String.format("%-3s| %-14s| %s" , (i+1), tmpdrink.getName(), tmpdrink.getPrice()));
     }
     System.out.println("---+---------------+-----------");
   }
 
   /*
-   *  chooseDrinks
-   *  Given an ArrayList of Drink objects, choose among them for billing and perform billing
+   *  choosedrinks
+   *  Given an ArrayList of drink objects, choose among them for billing and perform billing
    *  @param products - ArrayList of Product objects
    */
-  public static void chooseDrinks(ArrayList<Drink> drinksList) {
+  public static void choosedrinks(ArrayList<drink> drinksList) {
     //  TODO:
   }
 
   /*
-   *  searchDrinks
-   *  Given an ArrayList of Drink objects, search among them and return if found
+   *  searchdrinks
+   *  Given an ArrayList of drink objects, search among them and return if found
    *  @param products - ArrayList of Product objects
    */
-  public static void searchDrinks(ArrayList<Drink> drinksList) {
+  public static void searchdrinks(ArrayList<drink> drinksList) {
     //  TODO:
   }
 
   /*
-   *  sortDrinksByPrice
-   *  Given an ArrayList of Drink objects, sort them by their prices
+   *  sortdrinksByPrice
+   *  Given an ArrayList of drink objects, sort them by their prices
    *  @param products - ArrayList of Product objects
    */
-  public static void sortDrinksByPrice(ArrayList<Drink> drinksList) {
+  public static void sortdrinksByPrice(ArrayList<drink> drinksList) {
     //  TODO:
   }
 
   /*
-   *  sortDrinksByName
-   *  Given an ArrayList of Drink objects, sort them by their names
+   *  sortdrinksByName
+   *  Given an ArrayList of drink objects, sort them by their names
    *  @param products - ArrayList of Product objects
    */
-  public static void sortDrinksByName(ArrayList<Drink> drinksList) {
+  public static void sortdrinksByName(ArrayList<drink> drinksList) {
     //  TODO:
   }
 }
