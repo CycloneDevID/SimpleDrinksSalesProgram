@@ -64,10 +64,10 @@ No | Name of Drink | Price
 ---+---------------+-----------
 
 please select the drink number you want: 1
-what more drink you want? y/n
+order another drink? y/n
 y
 please select the drink number you want: 4
-what more drink you want? y/n
+order another drink? y/n
 n
 
 your drink:
@@ -84,6 +84,37 @@ You've already bought Coca Cola and Pepsi, thank you!
 ```
 ### 2:Search the drink you want
 ```bash
+Menu: Search the drink you want!
+
+No | Name of Drink | Price
+---+---------------+-----------
+1  | Coca-Cola     | 11000
+2  | Pepsi         | 9500
+3  | Fanta         | 12000
+4  | Sprite        | 10500
+5  | Dr Papper     | 15000
+6  | pocari sweat  | 7000
+7  | Calpico       | 6500
+8  | Ornamin C     | 10000
+---+---------------+-----------
+Type in the name of the drink you want to search for: Milk
+Sorry, the drink you are looking for is not available. Searching again? y/n
+y
+Type in the name of the drink you want to search for: Pepsi
+
+No | Name of Drink | Price
+---+---------------+-----------
+2  | Pepsi         | 9500
+---+---------------+-----------
+
+Is this the drink you mean? y/n
+y
+Buy this drink? y/n
+y
+amount paid :  9500
+enter the amount of money : 10000
+change money : 500
+You've already bought Pepsi, thank you!
 ```
 ### 3:Sort by drink price
 ```bash
