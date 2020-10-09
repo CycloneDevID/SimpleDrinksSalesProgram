@@ -49,7 +49,7 @@ Please select a number from the menu:
 
 ### 1:Choose the drink you want
 ```bash
-Menu: Choose the drink you want!
+Menu 1: Choose the drink you want!
 
 No | Name of Drink | Price
 ---+---------------+-----------
@@ -84,7 +84,7 @@ You've already bought Coca Cola and Pepsi, thank you!
 ```
 ### 2:Search the drink you want
 ```bash
-Menu: Search the drink you want!
+Menu 2: Search the drink you want!
 
 No | Name of Drink | Price
 ---+---------------+-----------
@@ -118,6 +118,57 @@ You've already bought Pepsi, thank you!
 ```
 ### 3:Sort by drink price
 ```bash
+Menu 3: Sort by drink price!
+
+No | Name of Drink | Price
+---+---------------+-----------
+1  | Coca-Cola     | 11000
+2  | Pepsi         | 9500
+3  | Fanta         | 12000
+4  | Sprite        | 10500
+5  | Dr Papper     | 15000
+6  | pocari sweat  | 7000
+7  | Calpico       | 6500
+8  | Ornamin C     | 10000
+---+---------------+-----------
+sort by:
+1. Cheapest.
+2. Most expensive.
+
+Please select a number: 1
+Sort by cheapest drink prices
+
+No | Name of Drink | Price
+---+---------------+-----------
+7  | Calpico       | 6500
+6  | pocari sweat  | 7000
+2  | Pepsi         | 9500
+1  | Coca-Cola     | 11000
+8  | Ornamin C     | 10000
+4  | Sprite        | 10500
+3  | Fanta         | 12000
+5  | Dr Papper     | 15000
+---+---------------+-----------
+
+want to buy a drink? y/n
+n
+
+Please select a number: 2
+Sort by price of the most expensive drinks
+No | Name of Drink | Price
+---+---------------+-----------
+5  | Dr Papper     | 15000
+3  | Fanta         | 12000
+4  | Sprite        | 10500
+1  | Coca-Cola     | 11000
+8  | Ornamin C     | 10000
+2  | Pepsi         | 9500
+6  | pocari sweat  | 7000
+7  | Calpico       | 6500
+---+---------------+-----------
+
+want to buy a drink? y/n
+n
 ```
 ### 4:Sort by drink name
 ```bash
