@@ -152,7 +152,6 @@ No | Name of Drink | Price
 
 want to buy a drink? y/n
 n
-
 Please select a number: 2
 Sort by price of the most expensive drinks
 No | Name of Drink | Price
@@ -172,6 +171,54 @@ n
 ```
 ### 4:Sort by drink name
 ```bash
+Menu 3: Sort by drink name!
+
+No | Name of Drink | Price
+---+---------------+-----------
+1  | Coca-Cola     | 11000
+2  | Pepsi         | 9500
+3  | Fanta         | 12000
+4  | Sprite        | 10500
+5  | Dr Papper     | 15000
+6  | pocari sweat  | 7000
+7  | Calpico       | 6500
+8  | Ornamin C     | 10000
+---+---------------+-----------
+sort by:
+ 1. Ascending.
+ 2. Descending.
+
+Please select a number: 1
+Sort by Ascending
+No | Name of Drink | Price
+---+---------------+-----------
+7  | Calpico       | 6500
+1  | Coca-Cola     | 11000
+5  | Dr Papper     | 15000
+3  | Fanta         | 12000
+8  | Ornamin C     | 10000
+2  | Pepsi         | 9500
+6  | Pocari sweat  | 7000
+4  | Sprite        | 10500
+---+---------------+-----------
+want to buy a drink? y/n
+n
+Please select a number: 2
+
+Sort by Descending
+No | Name of Drink | Price
+---+---------------+-----------
+4  | Sprite        | 10500
+6  | Pocari sweat  | 7000
+2  | Pepsi         | 9500
+8  | Ornamin C     | 10000
+3  | Fanta         | 12000
+5  | Dr Papper     | 15000
+1  | Coca-Cola     | 11000
+7  | Calpico       | 6500
+---+---------------+-----------
+want to buy a drink? y/n
+n
 ```
 
 # Required
