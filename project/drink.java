@@ -1,13 +1,13 @@
 /*
- *  Java Drink file
- *  Contains Drink Class Defintion
+ *  Java drink file
+ *  Contains drink Class Defintion
  *  for drink details
  */
 
 
 import java.util.*;
 
-public class Drink {
+public class drink {
   /*
    *  Privata data members
    *  Note: Can add more
@@ -20,7 +20,7 @@ public class Drink {
    *  Assign default null value to private members
    *  @param - NULL
    */
-  public Drink() {
+  public drink() {
     name = "";
     price = 0;
   }
