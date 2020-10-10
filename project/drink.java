@@ -1,11 +1,49 @@
-import java.util.Scanner;
-import java.util.ArrayList;
+package program;
 
-public class drink{
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class drink {
 
     public static void main(String[] args){
-        // your code
-        Scanner input = new Scanner(System.in);
+        Scanner userInput = new Scanner(System.in);
+        int menuNumber;
+        
+        System.out.println("\nNo | Name of Drink | Price");
+        System.out.println("---+---------------+-----------");
+        System.out.println("1  | Coca-Cola     | 11000");
+        System.out.println("2  | Pepsi         | 9500");
+        System.out.println("3  | Fanta         | 12000");
+        System.out.println("4  | Sprite        | 10500");
+        System.out.println("5  | Dr Papper     | 15000");
+        System.out.println("6  | pocari sweat  | 7000");
+        System.out.println("7  | Calpico       | 6500");
+        System.out.println("8  | Ornamin C     | 10000");
+        System.out.println("---+---------------+-----------");
+        System.out.println("\nMenu:");
+        System.out.println("1. Choose the drink you want");
+        System.out.println("2. Search the drink you want");
+        System.out.println("3. Sort by drink price");
+        System.out.println("4. Sort by drink name");
+        System.out.print("\nPlease select a number from the menu:");
+        menuNumber = userInput.nextInt();
+        switch(menuNumber){
+            case 1:
+                chooseDrink();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            default:
+        }             
+    }
+    public static void chooseDrink(){
+        Scanner input = new Scanner(System.in);    
         ArrayList<String> order = new ArrayList<String>();
 
         int cocaCola = 11000;
@@ -34,7 +72,7 @@ public class drink{
             System.out.println("7  | Calpico      | " + calpico);
             System.out.println("8  | Ornamin C    | " + ornaminC);
             System.out.println("=====================================");
-            System.out.print("Choose a drink = ");
+            System.out.print("Choose the drink you want : ");
             int choose = input.nextInt();
             
             switch (choose) {
@@ -127,6 +165,6 @@ public class drink{
                 System.out.println("Your money is not enough! Please enter again");
             }
         }
-    }
+    }    
 }
-    
+      
