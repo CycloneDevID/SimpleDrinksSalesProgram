@@ -32,6 +32,7 @@ public class drink {
                 chooseDrink();
                 break;
             case 2:
+                searchDrink();
                 break;
             case 3:
                 break;
@@ -42,6 +43,7 @@ public class drink {
             default:
         }             
     }
+    
     public static void chooseDrink(){
         Scanner input = new Scanner(System.in);    
         ArrayList<String> order = new ArrayList<String>();
@@ -140,24 +142,28 @@ public class drink {
         System.out.println("-------------------");
 
         System.out.println("Total price : " + total);
-        
+        System.out.print("\nEnter your money: ");
+        int money = input.nextInt();
+        calculateTheTotalPurchase(order, total, money);
+    }
+    
+    public static void calculateTheTotalPurchase(ArrayList<String> cOrder, int cTotal,int cMoney){
         while(true) {
-            System.out.print("\nEnter your money: ");
-            int money = input.nextInt();
-            if(money > total) {
-                int change = money - total;
+            int money = cMoney;
+            if(money > cTotal) {
+                int change = money - cTotal;
                 System.out.println("money changes " + change);
                 System.out.print("You already bought ");
-                for(int i=0; i<order.size(); i++) {
-                    System.out.print(order.get(i) + ", ");
+                for(int i=0; i<cOrder.size(); i++) {
+                    System.out.print(cOrder.get(i) + ", ");
                 }
                 System.out.println("Thank you!");
                 break;
-            } else if(money == total) {
+            } else if(money == cTotal) {
                 System.out.println("your money has no change");
                 System.out.print("You already bought ");
-                for(int i=0; i<order.size(); i++) {
-                    System.out.print(order.get(i) + ", ");
+                for(int i=0; i<cOrder.size(); i++) {
+                    System.out.print(cOrder.get(i) + ", ");
                 }
                 System.out.println("Thank you!");
                 break;
@@ -165,6 +171,10 @@ public class drink {
                 System.out.println("Your money is not enough! Please enter again");
             }
         }
-    }    
+    }
+    
+    public static void seaarchDrink(){
+        
+    }
 }
       
