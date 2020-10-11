@@ -140,18 +140,18 @@ public class drink {
             System.out.println((i+1) + "  | " + order.get(i));
         }
         System.out.println("-------------------");
-
+ 
         System.out.println("Total price : " + total);
-        System.out.print("\nEnter your money: ");
-        int money = input.nextInt();
-        calculateTheTotalPurchase(order, total, money);
+        calculateTheTotalPurchase(order, total);
     }
     
-    public static void calculateTheTotalPurchase(ArrayList<String> cOrder, int cTotal,int cMoney){
+    public static void calculateTheTotalPurchase(ArrayList<String> cOrder, int total){
+        Scanner input = new Scanner(System.in); 
         while(true) {
-            int money = cMoney;
-            if(money > cTotal) {
-                int change = money - cTotal;
+            System.out.print("\nEnter your money: ");
+            int money = input.nextInt();
+            if(money > total) {
+                int change = money - total;
                 System.out.println("money changes " + change);
                 System.out.print("You already bought ");
                 for(int i=0; i<cOrder.size(); i++) {
@@ -159,7 +159,7 @@ public class drink {
                 }
                 System.out.println("Thank you!");
                 break;
-            } else if(money == cTotal) {
+            } else if(money == total) {
                 System.out.println("your money has no change");
                 System.out.print("You already bought ");
                 for(int i=0; i<cOrder.size(); i++) {
@@ -176,6 +176,7 @@ public class drink {
     public static void searchDrink(){
         Scanner input = new Scanner(System.in);    
         ArrayList<String> drink = new ArrayList<String>();
+        ArrayList<String> drinkFound = new ArrayList<String>();
         ArrayList<Integer> price = new ArrayList<Integer>();
         
         drink.add("Cola-Cola");
@@ -221,6 +222,8 @@ public class drink {
                 System.out.println("---+---------------+-----------");
                 System.out.println((n+1) + "  | " + drink.get(n) + "         | " + price.get(n));
                 System.out.println("-------------------------------");
+                drinkFound.add(drink.get(n));
+                break;
             }
         }
         total = price.get(n);
@@ -232,9 +235,9 @@ public class drink {
             q = input.nextLine();
             if(q.equals("y")){
                 System.out.println("Total price : " + total);
-                System.out.print("\nEnter your money: ");
-                int money = input.nextInt();
-                calculateTheTotalPurchase(drink, total, money);
+                calculateTheTotalPurchase(drinkFound,total);
+            }else{
+                System.out.println("Thank you!");
             }
         }
     }
