@@ -59,7 +59,7 @@ public class drink {
         int total = 0;
         String repeat = "y";
 
-        System.out.println("\n********** WELCOME TO ANY DRINK ***********");
+        System.out.println("\n********** Choose the drink you want! ***********");
 
         while (repeat.equals("y")) {
             System.out.println("\n            Main Menu            \n");
@@ -173,8 +173,69 @@ public class drink {
         }
     }
     
-    public static void seaarchDrink(){
+    public static void searchDrink(){
+        Scanner input = new Scanner(System.in);    
+        ArrayList<String> drink = new ArrayList<String>();
+        ArrayList<Integer> price = new ArrayList<Integer>();
         
+        drink.add("Cola-Cola");
+        drink.add("Pepsi");
+        drink.add("Fanta");
+        drink.add("Sprite");
+        drink.add("Dr Papper");
+        drink.add("Pocari Sweat");
+        drink.add("Calpico");
+        drink.add("Ornamin C");
+
+        price.add(11000);
+        price.add(9500);
+        price.add(12000);
+        price.add(10500);
+        price.add(15000);
+        price.add(7000);
+        price.add(6500);
+        price.add(10000);
+        int total = 0;
+
+        System.out.println("\n********** Search the drink you want! ***********");
+        System.out.println("\n            Main Menu            \n");
+        System.out.println("NO | Name         | Price");
+        System.out.println("---+--------------+-------");
+        System.out.println("1  | Cola-Cola    | " + price.get(0));
+        System.out.println("2  | Pepsi        | " + price.get(1));
+        System.out.println("3  | Fanta        | " + price.get(2));
+        System.out.println("4  | Sprite       | " + price.get(3));
+        System.out.println("5  | Dr Papper    | " + price.get(4));
+        System.out.println("6  | Pocari Sweat | " + price.get(5));
+        System.out.println("7  | Calpico      | " + price.get(6));
+        System.out.println("8  | Ornamin C    | " + price.get(7));
+        System.out.println("=====================================");
+        System.out.print("Type in the name of the drink you want to search for : ");
+        String search = input.nextLine();
+        int n = 0;
+        for(int i=0;i<=drink.size()-1;i++){
+            n = i;
+            if(search.equals(drink.get(i))){
+                System.out.println("\n==== Your Search ==== ");
+                System.out.println("NO | Name          | Price");
+                System.out.println("---+---------------+-----------");
+                System.out.println((n+1) + "  | " + drink.get(n) + "         | " + price.get(n));
+                System.out.println("-------------------------------");
+            }
+        }
+        total = price.get(n);
+        String q = "";
+        System.out.print("Is this the drink you mean (y/n) : ");
+        q = input.nextLine();
+        if(q.equals("y")){
+            System.out.print("Buy this drink (y/n) : ");
+            q = input.nextLine();
+            if(q.equals("y")){
+                System.out.println("Total price : " + total);
+                System.out.print("\nEnter your money: ");
+                int money = input.nextInt();
+                calculateTheTotalPurchase(drink, total, money);
+            }
+        }
     }
 }
-      
