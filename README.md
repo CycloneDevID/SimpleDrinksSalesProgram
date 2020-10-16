@@ -134,6 +134,7 @@ No | Name of Drink | Price
 sort by:
 1. Cheapest.
 2. Most expensive.
+3. Exit.
 
 Please select a number: 1
 Sort by cheapest drink prices
@@ -167,7 +168,9 @@ No | Name of Drink | Price
 ---+---------------+-----------
 
 want to buy a drink? y/n
-n
+y
+
+<show Menu 2>
 ```
 ### 4:Sort by drink name
 ```bash

@@ -1,14 +1,27 @@
 package program;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class drink {
 
-    public static void main(String[] args){
-        Scanner userInput = new Scanner(System.in);
+    private static final Map<String, Integer> drinks = new LinkedHashMap<>();
+    private static final Scanner userInput = new Scanner(System.in);
+
+    static {
+        drinks.put("Coca-Cola", 11000);
+        drinks.put("Pepsi", 9500);
+        drinks.put("Fanta", 12000);
+        drinks.put("Sprite", 10500);
+        drinks.put("Dr Papper", 15000);
+        drinks.put("pocari sweat", 7000);
+        drinks.put("Calpico", 6500);
+        drinks.put("Ornamin C", 10000);
+    }
+
+    public static void main(String[] args) {
         int menuNumber;
-        
+
         System.out.println("\nNo | Name of Drink | Price");
         System.out.println("---+---------------+-----------");
         System.out.println("1  | Coca-Cola     | 11000");
@@ -35,17 +48,18 @@ public class drink {
                 searchDrink();
                 break;
             case 3:
+                sortByPrice();
                 break;
             case 4:
                 break;
             case 5:
                 break;
             default:
-        }             
+        }
     }
-    
+
     public static void chooseDrink(){
-        Scanner input = new Scanner(System.in);    
+        Scanner input = new Scanner(System.in);
         ArrayList<String> order = new ArrayList<String>();
 
         int cocaCola = 11000;
@@ -76,7 +90,7 @@ public class drink {
             System.out.println("=====================================");
             System.out.print("Choose the drink you want : ");
             int choose = input.nextInt();
-            
+
             switch (choose) {
                 case 1:{
                     System.out.println("You chose Coca-Cola");
@@ -114,13 +128,13 @@ public class drink {
                     order.add("Pocari Sweat");
                     break;
                 }
-                    case 7:{
+                case 7:{
                     System.out.println("You chose Calpico");
                     total += calpico;
                     order.add("Calpico");
                     break;
                 }
-                    case 8:{
+                case 8:{
                     System.out.println("Kamu memilih Ornamin C");
                     total += ornaminC;
                     order.add("Ornamin C");
@@ -135,18 +149,18 @@ public class drink {
         System.out.println("\n==== Your order ==== ");
         System.out.println("NO | Name          ");
         System.out.println("---+---------------");
-        
+
         for(int i=0; i<order.size(); i++) {
             System.out.println((i+1) + "  | " + order.get(i));
         }
         System.out.println("-------------------");
- 
+
         System.out.println("Total price : " + total);
         calculateTheTotalPurchase(order, total);
     }
-    
+
     public static void calculateTheTotalPurchase(ArrayList<String> cOrder, int total){
-        Scanner input = new Scanner(System.in); 
+        Scanner input = new Scanner(System.in);
         while(true) {
             System.out.print("\nEnter your money: ");
             int money = input.nextInt();
@@ -172,13 +186,13 @@ public class drink {
             }
         }
     }
-    
+
     public static void searchDrink(){
-        Scanner input = new Scanner(System.in);    
+        Scanner input = new Scanner(System.in);
         ArrayList<String> drink = new ArrayList<String>();
         ArrayList<String> drinkFound = new ArrayList<String>();
         ArrayList<Integer> price = new ArrayList<Integer>();
-        
+
         drink.add("Cola-Cola");
         drink.add("Pepsi");
         drink.add("Fanta");
@@ -240,5 +254,58 @@ public class drink {
                 System.out.println("Thank you!");
             }
         }
+    }
+
+    public static void sortByPrice() {
+        System.out.println("Menu 3 Sort by drink price!\n");
+        displayMenu();
+        System.out.println("sort by:");
+        System.out.println("1. Cheapest.");
+        System.out.println("2. Most expensive.");
+        System.out.println("3. Exit.");
+
+        int sortOption = 0;
+
+        while (sortOption != 3) {
+            System.out.print("Please select a number: ");
+            sortOption = userInput.nextInt();
+            switch (sortOption) {
+                case 1:
+                    System.out.println("Sort by cheapest drink prices");
+                    displayMenu(drinks.entrySet()
+                            .stream()
+                            .sorted(Map.Entry.comparingByValue())
+                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
+                    break;
+                case 2:
+                    System.out.println("Sort by price of the most expensive drinks");
+                    displayMenu(drinks.entrySet()
+                            .stream()
+                            .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
+                    break;
+            }
+
+            System.out.println("want to buy a drink? y/n");
+            String userWantsToBuyADrink = userInput.next();
+            if (userWantsToBuyADrink.equalsIgnoreCase("y")) {
+                chooseDrink();
+                break;
+            }
+        }
+    }
+
+    public static void displayMenu(Map<String, Integer> drinksToPrint) {
+        System.out.println("No | Name of Drink | Price");
+        System.out.println("---+---------------+-----------");
+        int id = 1;
+        for (Map.Entry<String, Integer> entry : drinksToPrint.entrySet()) {
+            System.out.printf("%-3d| %-14s| %d \n", id++, entry.getKey(), entry.getValue());
+        }
+        System.out.println("---+---------------+-----------");
+    }
+
+    public static void displayMenu() {
+        displayMenu(drinks);
     }
 }
