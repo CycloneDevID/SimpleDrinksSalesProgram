@@ -14,7 +14,7 @@ public class drink {
         drinks.put("Fanta", 12000);
         drinks.put("Sprite", 10500);
         drinks.put("Dr Papper", 15000);
-        drinks.put("pocari sweat", 7000);
+        drinks.put("Pocari sweat", 7000);
         drinks.put("Calpico", 6500);
         drinks.put("Ornamin C", 10000);
     }
@@ -298,16 +298,41 @@ public class drink {
 
 
     public static void sortByName() {
-        System.out.println("Sort drinks by name");
-        displayMenu(drinks.entrySet()
-                .stream()
-                .sorted(Map.Entry.comparingByKey())
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
+        System.out.println("Menu 4: Sort by drink name!\n");
+        displayMenu();
+        System.out.println("sort by:");
+        System.out.println("1. Ascending.");
+        System.out.println("2. Descending.");
+        System.out.println("3. Exit.");
 
-        System.out.println("want to buy a drink? y/n");
-        String userWantsToBuyADrink = userInput.next();
-        if (userWantsToBuyADrink.equalsIgnoreCase("y")) {
-            chooseDrink();
+        int sortOption = 0;
+
+        while (sortOption != 3) {
+            System.out.print("Please select a number: ");
+            sortOption = userInput.nextInt();
+            switch (sortOption) {
+                case 1:
+                    System.out.println("Sort by Ascending");
+                    displayMenu(drinks.entrySet()
+                            .stream()
+                            .sorted(Map.Entry.comparingByKey())
+                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
+                    break;
+                case 2:
+                    System.out.println("Sort by Descending");
+                    displayMenu(drinks.entrySet()
+                            .stream()
+                            .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
+                    break;
+            }
+
+            System.out.println("want to buy a drink? y/n");
+            String userWantsToBuyADrink = userInput.next();
+            if (userWantsToBuyADrink.equalsIgnoreCase("y")) {
+                chooseDrink();
+                break;
+            }
         }
     }
 
