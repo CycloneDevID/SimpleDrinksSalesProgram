@@ -51,6 +51,7 @@ public class drink {
                 sortByPrice();
                 break;
             case 4:
+                sortByName();
                 break;
             case 5:
                 break;
@@ -292,6 +293,21 @@ public class drink {
                 chooseDrink();
                 break;
             }
+        }
+    }
+
+
+    public static void sortByName() {
+        System.out.println("Sort drinks by name");
+        displayMenu(drinks.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
+
+        System.out.println("want to buy a drink? y/n");
+        String userWantsToBuyADrink = userInput.next();
+        if (userWantsToBuyADrink.equalsIgnoreCase("y")) {
+            chooseDrink();
         }
     }
 
