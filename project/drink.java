@@ -1,9 +1,9 @@
-package program;
+package MenuUtama;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class drink {
+public class coba {
 
     public static void main(String[] args){
         Scanner userInput = new Scanner(System.in);
