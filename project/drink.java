@@ -1,14 +1,27 @@
 package MenuUtama;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class coba {
 
-    public static void main(String[] args){
-        Scanner userInput = new Scanner(System.in);
+    private static final Map<String, Integer> drinks = new LinkedHashMap<>();
+    private static final Scanner userInput = new Scanner(System.in);
+
+    static {
+        drinks.put("Coca-Cola", 11000);
+        drinks.put("Pepsi", 9500);
+        drinks.put("Fanta", 12000);
+        drinks.put("Sprite", 10500);
+        drinks.put("Dr Papper", 15000);
+        drinks.put("pocari sweat", 7000);
+        drinks.put("Calpico", 6500);
+        drinks.put("Ornamin C", 10000);
+    }
+
+    public static void main(String[] args) {
         int menuNumber;
-        
+
         System.out.println("\nNo | Name of Drink | Price");
         System.out.println("---+---------------+-----------");
         System.out.println("1  | Coca-Cola     | 11000");
@@ -35,17 +48,18 @@ public class coba {
                 searchDrink();
                 break;
             case 3:
+                sortByPrice();
                 break;
             case 4:
                 break;
             case 5:
                 break;
             default:
-        }             
+        }
     }
-    
+
     public static void chooseDrink(){
-        Scanner input = new Scanner(System.in);    
+        Scanner input = new Scanner(System.in);
         ArrayList<String> order = new ArrayList<String>();
 
         int cocaCola = 11000;
@@ -76,7 +90,7 @@ public class coba {
             System.out.println("=====================================");
             System.out.print("Choose the drink you want : ");
             int choose = input.nextInt();
-            
+
             switch (choose) {
                 case 1:{
                     System.out.println("You chose Coca-Cola");
@@ -114,13 +128,13 @@ public class coba {
                     order.add("Pocari Sweat");
                     break;
                 }
-                    case 7:{
+                case 7:{
                     System.out.println("You chose Calpico");
                     total += calpico;
                     order.add("Calpico");
                     break;
                 }
-                    case 8:{
+                case 8:{
                     System.out.println("Kamu memilih Ornamin C");
                     total += ornaminC;
                     order.add("Ornamin C");
@@ -135,18 +149,18 @@ public class coba {
         System.out.println("\n==== Your order ==== ");
         System.out.println("NO | Name          ");
         System.out.println("---+---------------");
-        
+
         for(int i=0; i<order.size(); i++) {
             System.out.println((i+1) + "  | " + order.get(i));
         }
         System.out.println("-------------------");
- 
+
         System.out.println("Total price : " + total);
         calculateTheTotalPurchase(order, total);
     }
-    
+
     public static void calculateTheTotalPurchase(ArrayList<String> cOrder, int total){
-        Scanner input = new Scanner(System.in); 
+        Scanner input = new Scanner(System.in);
         while(true) {
             System.out.print("\nEnter your money: ");
             int money = input.nextInt();
@@ -172,13 +186,13 @@ public class coba {
             }
         }
     }
-    
+
     public static void searchDrink(){
-        Scanner input = new Scanner(System.in);    
+        Scanner input = new Scanner(System.in);
         ArrayList<String> drink = new ArrayList<String>();
         ArrayList<String> drinkFound = new ArrayList<String>();
         ArrayList<Integer> price = new ArrayList<Integer>();
-        
+
         drink.add("Cola-Cola");
         drink.add("Pepsi");
         drink.add("Fanta");
