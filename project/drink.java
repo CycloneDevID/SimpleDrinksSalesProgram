@@ -1,9 +1,9 @@
-package program;
+package MenuUtama;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class drink {
+public class coba {
 
     private static final Map<String, Integer> drinks = new LinkedHashMap<>();
     private static final Scanner userInput = new Scanner(System.in);
@@ -254,58 +254,5 @@ public class drink {
                 System.out.println("Thank you!");
             }
         }
-    }
-
-    public static void sortByPrice() {
-        System.out.println("Menu 3 Sort by drink price!\n");
-        displayMenu();
-        System.out.println("sort by:");
-        System.out.println("1. Cheapest.");
-        System.out.println("2. Most expensive.");
-        System.out.println("3. Exit.");
-
-        int sortOption = 0;
-
-        while (sortOption != 3) {
-            System.out.print("Please select a number: ");
-            sortOption = userInput.nextInt();
-            switch (sortOption) {
-                case 1:
-                    System.out.println("Sort by cheapest drink prices");
-                    displayMenu(drinks.entrySet()
-                            .stream()
-                            .sorted(Map.Entry.comparingByValue())
-                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
-                    break;
-                case 2:
-                    System.out.println("Sort by price of the most expensive drinks");
-                    displayMenu(drinks.entrySet()
-                            .stream()
-                            .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
-                    break;
-            }
-
-            System.out.println("want to buy a drink? y/n");
-            String userWantsToBuyADrink = userInput.next();
-            if (userWantsToBuyADrink.equalsIgnoreCase("y")) {
-                chooseDrink();
-                break;
-            }
-        }
-    }
-
-    public static void displayMenu(Map<String, Integer> drinksToPrint) {
-        System.out.println("No | Name of Drink | Price");
-        System.out.println("---+---------------+-----------");
-        int id = 1;
-        for (Map.Entry<String, Integer> entry : drinksToPrint.entrySet()) {
-            System.out.printf("%-3d| %-14s| %d \n", id++, entry.getKey(), entry.getValue());
-        }
-        System.out.println("---+---------------+-----------");
-    }
-
-    public static void displayMenu() {
-        displayMenu(drinks);
     }
 }
