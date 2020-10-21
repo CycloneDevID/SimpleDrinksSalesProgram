@@ -256,3 +256,110 @@ public class coba {
         }
     }
 }
+--------------------------------------------------------------------------------------
+    Looking for types of drinks
+    
+ package MenuUtama;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Menu_Minuman {
+    public static void main(String[] args){
+        // your code
+        Scanner input = new Scanner(System.in);
+        ArrayList<String> pesanan = new ArrayList<String>();
+        
+        int CocaCola = 11000;
+        int Pepsi = 9500;
+        int Fanta = 12000;
+        int Sprite = 10500;
+        int Dr_papper = 15000;
+        int Pocari = 7000;
+        int Calpino = 6500;
+        int Ornamin = 6500;
+        int total = 0;
+        String ulang = "y";
+        
+        System.out.println(" ");
+        
+        System.out.println("************* WELCOME TO ANY DRINK*************");
+        
+        while (ulang.equals("y")) {
+            System.out.println("\n          Main Course         \n");
+            System.out.println("No  |        Name      |");
+            System.out.println("----+------------------+-------");
+            System.out.println("1       |  Coca-cola    " );
+            System.out.println("2       |  Pepsi         " );
+            System.out.println("3       |  Fanta        " );
+            System.out.println("4       |  Sprite       " );
+            System.out.println("5       |  Dr Papper    " );
+            System.out.println("6       |  Pocari Sweat " );
+            System.out.println("7       |  Calpino      ");
+            System.out.println("8       |  Ornamin C    ");
+            System.out.println("=================================");
+            System.out.println("Choose a drink=  ");
+            int pilih = input.nextInt();
+            
+            switch (pilih) {
+                case 1:{
+                    System.out.println("You choose Coca-cola");
+                    total += CocaCola;
+                    pesanan.add("Coca-cola");
+                    break;
+                }
+                case 2:{
+                    System.out.println("You choose Pepsi");
+                    total += Pepsi;
+                    pesanan.add("Pepsi");
+                    break;
+                }
+                case 3:{
+                    System.out.println("You choose Fanta");
+                    total += Fanta;
+                    pesanan.add("Fanta");
+                    break;
+                }
+                case 4:{
+                    System.out.println("You choose Sprite");
+                    total += Sprite;
+                    pesanan.add("Sprite");
+                    break;
+                }
+                case 5:{
+                    System.out.println("You choose Dr papper");
+                    total += Dr_papper;
+                    pesanan.add("Dr papper");
+                    break;
+                }
+                case 6:{
+                    System.out.println("You choose Pocari sweat");
+                    total += Pocari;
+                    pesanan.add("Pocari sweat");
+                    break;
+                }
+                case 7:{
+                    System.out.println("You choose Calpino");
+                    total += Calpino;
+                    pesanan.add("Calpino");
+                    break;
+                }
+                case 8:{
+                    System.out.println("You choose Ornamin C");
+                    total += Ornamin;
+                    pesanan.add("Ornamin C");
+                    break;
+                }
+            }
+              System.out.println("===================================");
+              System.out.println("Do you want to choose a drink again(y / t)?  ");
+              ulang = input.next();
+            }
+                System.out.println("\n====== Your order ======");
+                System.out.println("No  |   Name            ");
+                System.out.println("-----+---------------");
+                
+                for(int i=0; i<pesanan.size(); i++) {
+                    System.out.println((i+1) + "     |       " + pesanan.get(i));
+                }
+            }
+        }
